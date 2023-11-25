@@ -1,3 +1,4 @@
+// @ts-ignore
 var student;
 student = { id: 1, name: "amal", age: 30, salary: 50000 };
 // student={id:1,name:"amal",age:30,salary:50000,collage:"ABC"};
@@ -20,7 +21,19 @@ function calcDistance(location1, location2) {
     // Calculate the distance
     return R * c;
 }
-var location1 = { lon: 80.7718, lat: 7.8731 };
-var location2 = { lon: 133.7751, lat: 25.2744 };
-var distance = calcDistance(location1, location2);
-console.log(distance);
+//
+// let location1 = {lon:80.7718,lat:7.8731}
+// let location2 = {lon:133.7751,lat:25.2744}
+var lat1Input = document.getElementById('lat1');
+var lon1Input = document.getElementById('lon1');
+var lat2Input = document.getElementById('lat2');
+var lon2Input = document.getElementById('lon2');
+var btnElement = document.getElementById('btn');
+var resultElement = document.getElementById('result');
+btnElement.addEventListener('click', function () {
+    var location1 = { lon: +lat1Input.value, lat: +lon1Input.value };
+    var location2 = { lon: +lat2Input.value, lat: +lon2Input.value };
+    var distance = calcDistance(location1, location2);
+    console.log(distance);
+    resultElement.innerText = "".concat(distance.toFixed(2), "  KM");
+});
