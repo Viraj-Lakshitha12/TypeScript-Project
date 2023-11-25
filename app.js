@@ -7,7 +7,17 @@ function findSum(num1, num2) {
     return num1 + num2;
 }
 function findMySum(num1, num2) {
-    if (typeof num1 === 'string' || typeof num2 === 'string') {
+    if (typeof num1 === 'string' || typeof num2 === 'string') { // type guard
+        return +num1 + +num2;
+    }
+    else {
+        return num1 + num2;
+    }
+}
+function findMySum2(num1, num2) {
+    // @ts-ignore
+    // return num1+num2;  //can error ignore
+    if (typeof num1 === 'string' || typeof num2 === 'string') { // type guard
         return +num1 + +num2;
     }
     else {
@@ -23,7 +33,7 @@ var value2 = sendSum(+n1, +n2, "kamal", false); // changed isWithName to false
 console.log(value2);
 var findSum1 = findSum(10, 20);
 console.log("result : " + findSum1);
-var findMySum1 = findMySum(100, 200);
-console.log("find My Sum : " + findMySum1);
-var findMySum2 = findMySum('100', 200);
-console.log("find My Sum : " + findMySum2);
+var findMySumValue1 = findMySum(100, 200);
+console.log("find My Sum : " + findMySumValue1);
+var findMySumValue2 = findMySum('100', 200);
+console.log("find My Sum : " + findMySumValue2);
