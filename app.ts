@@ -15,3 +15,23 @@ let person1 = new person("kamal",20,"232323233");
 console.log(person1);
 console.log(person1.name);
 // console.log(person1.nic); cant access
+
+
+
+class DBConnection{
+    private static connection:string;
+
+    private constructor(value:string) {
+        DBConnection.connection=value;
+    }
+
+    public static getConnection(){
+        if (!DBConnection.connection){
+            new DBConnection("test connection");
+        }
+        return DBConnection.connection;
+    }
+}
+
+let connection = DBConnection.getConnection();
+console.log(connection);
