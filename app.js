@@ -9,3 +9,5 @@ var person = /** @class */ (function () {
 }());
 var person1 = new person("kamal", 20, "232323233");
 console.log(person1);
+person1.name = "AAAAA";
+console.log(person1);
