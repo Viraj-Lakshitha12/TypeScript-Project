@@ -31,8 +31,9 @@ updateInterestBtn.addEventListener('click',()=>{
    //    accounts[i].interest_rate=rate;
    // }
    accounts.map(r =>{
-      r.interest_rate=rate;
-      r.annual_interest=(r.fixed_amount*r.interest_rate)/100;
+      // r.interest_rate=rate;
+      // r.annual_interest=(r.fixed_amount*r.interest_rate)/100;
+      r.update_rate(rate);
       new_accounts.push(r);
    });
    accounts=new_accounts;
@@ -67,4 +68,8 @@ class Account_Details {
       this.annual_interest=annual_interest;
    }
 
+   update_rate(rate : number):void{
+      this.interest_rate=rate;
+      this.annual_interest=(this.fixed_amount*rate)/100;
+   }
 }

@@ -24,8 +24,9 @@ updateInterestBtn.addEventListener('click', function () {
     //    accounts[i].interest_rate=rate;
     // }
     accounts.map(function (r) {
-        r.interest_rate = rate;
-        r.annual_interest = (r.fixed_amount * r.interest_rate) / 100;
+        // r.interest_rate=rate;
+        // r.annual_interest=(r.fixed_amount*r.interest_rate)/100;
+        r.update_rate(rate);
         new_accounts.push(r);
     });
     accounts = new_accounts;
@@ -47,5 +48,9 @@ var Account_Details = /** @class */ (function () {
         this.interest_rate = interest_rate;
         this.annual_interest = annual_interest;
     }
+    Account_Details.prototype.update_rate = function (rate) {
+        this.interest_rate = rate;
+        this.annual_interest = (this.fixed_amount * rate) / 100;
+    };
     return Account_Details;
 }());
