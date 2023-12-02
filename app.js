@@ -15,3 +15,4 @@ var Soldier = /** @class */ (function () {
     }
     return Soldier;
 }());
+var array1 = [];
