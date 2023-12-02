@@ -12,8 +12,8 @@ class Student{
 let array1:number[]=[1,2,3,4,5];
 let array2:string[]=["Hello","IJSE","GDSE","Panadura"];
 let array3:Student[]=[new Student("Viraj",22),
-                      new Student("Kamal",23),
-                      new Student("Amal",24)];
+    new Student("Kamal",23),
+    new Student("Amal",24)];
 
 
 function RemoveLastItem<T>(array:T[]):T[] {
